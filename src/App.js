@@ -51,17 +51,21 @@ function App() {
   return (
     <div>
       <div className="navbar">
-        <MovieListHeading heading='Movies' />
+        <MovieListHeading heading='Movies World' />
         <SearchBox serchValue={serchValue} setSearchValue={setSearchValue} />
       </div>
       <div className="horizontal-scroll">
-        <MovieList movies={movies} handleFavouritesClick={addFavouriteMovie} favouriteComponent={AddFavourites} />
+        <div className="scroll-container">
+          <MovieList movies={movies} handleFavouritesClick={addFavouriteMovie} favouriteComponent={AddFavourites} />
+        </div>
       </div>
       <div className="navbar">
         <MovieListHeading heading='Favourites' />
       </div>
       <div className="horizontal-scroll">
-        <MovieList movies={favourites} handleFavouritesClick={removeFavouriteMovie} favouriteComponent={RemoveFavourites} />
+        <div className="scroll-container">
+          <MovieList movies={favourites} handleFavouritesClick={removeFavouriteMovie} favouriteComponent={RemoveFavourites} />
+        </div>
       </div>
     </div>
   );
